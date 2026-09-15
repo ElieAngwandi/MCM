@@ -1,0 +1,14 @@
+/**
+ * Resolves an asset path with the configured base path (e.g. '/MCM' on GitHub Pages).
+ * Ensures assets (images, icons, etc.) resolve properly whether running locally,
+ * on a GitHub Pages repository subpath, or on a custom domain.
+ */
+export function getAssetPath(path: string): string {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return `${basePath}${cleanPath}`;
+}

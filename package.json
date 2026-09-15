@@ -1,0 +1,12 @@
+{
+  "name": "mcm-sarl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCM SARL Corporate Website",
+  "scripts": {
+    "dev": "npm --prefix website run dev",
+    "build": "npm --prefix website run build",
+    "start": "npm --prefix website run start",
+    "lint": "npm --prefix website run lint"
+  }
+}
