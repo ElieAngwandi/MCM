@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
-    "postbuild": "node -e \"const fs=require('fs'); if(fs.existsSync('dist/client')) fs.writeFileSync('dist/client/.nojekyll', '')\"",
+    "postbuild": "node scripts/prepare-pages.js",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"

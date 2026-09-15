@@ -46,8 +46,9 @@ jobs:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: npm run build
 
-      - name: Ensure .nojekyll exists
-        run: touch ./website/dist/client/.nojekyll
+      - name: Prepare Pages static layout
+        working-directory: ./website
+        run: node scripts/prepare-pages.js
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
